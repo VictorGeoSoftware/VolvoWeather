@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VolvoWeather</string>
+    <string name="gothenburg">Gothenburg</string>
+    <string name="five_days_forecast">5 days forecast</string>
+    <string name="humidity">Humidity %1$s%%</string>
+    <string name="max_min_weather">Min %1$s / Max %1$s</string>
+    <string name="sunrise">Sunrise at %1$sh</string>
+    <string name="sunset">Sunset at %1$sh</string>
+</resources>

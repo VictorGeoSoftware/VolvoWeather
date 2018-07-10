@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+ext {
+    open_weather_api_key = '"c611c9b880580979f0c1e075a76a82b1"'
+    api_url = '"http://api.openweathermap.org"'
+    api_icons_url = '"http://openweathermap.org/img/w/"'
+    time_out = '10'
+    gothenburg_latitude = '"57.42"'
+    gothenburg_longitude = '"11.58"'
+}
+
+buildscript {
+    ext.kotlin_version = '1.2.51'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

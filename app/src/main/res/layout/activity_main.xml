@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundScreens"
+        tools:context=".ui.main.MainActivity">
+
+        <TextView
+            android:id="@+id/txtCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
+            tools:text="@string/gothenburg"
+            android:textSize="24sp"
+            style="@style/TextNormal" />
+
+        <TextView
+            android:id="@+id/txtWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="32sp"
+            style="@style/TextLight"
+            tools:text="27º"/>
+
+        <TextView
+            android:id="@+id/txtWeatherMaxMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/TextLight"
+            tools:text="27º max / 18º min"/>
+
+        <ImageView
+            android:id="@+id/imgWeatherIcon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            tools:src="@drawable/ic_launcher_background"/>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
+            style="@style/TextBold"
+            tools:text="Clear"/>
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/TextLight"
+            tools:text="Clear sky"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="16sp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/txtHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextNormal"
+                tools:text="Humidity 47%"/>
+
+            <TextView
+                android:id="@+id/txtSunrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextNormal"
+                tools:text="Sunrise 8:00h"/>
+
+            <TextView
+                android:id="@+id/txtSunset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextNormal"
+                tools:text="Sunset 21:00h"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnForecast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_gravity="end"
+            android:text="@string/five_days_forecast"
+            android:textSize="18sp"
+            android:backgroundTint="@color/colorAccent"/>
+    </LinearLayout>
+</layout>

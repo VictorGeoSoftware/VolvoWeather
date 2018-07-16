@@ -21,6 +21,8 @@ android {
         buildConfigField "String", "API_KEY", rootProject.ext.open_weather_api_key
         buildConfigField "String", "MY_LATITUDE", rootProject.ext.gothenburg_latitude
         buildConfigField "String", "MY_LONGITUDE", rootProject.ext.gothenburg_longitude
+        testApplicationId "com.victor.test.volvoweather.test"
+        testInstrumentationRunner "com.victor.test.volvoweather.Instrumentations"
     }
 
     dataBinding.enabled = true
@@ -31,11 +33,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        androidTest {
+            assets.srcDirs = ['src/androidTest/assets']
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
@@ -59,4 +67,10 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.7.1'
+    //Cucumber
+    androidTestImplementation 'com.android.support:support-annotations:27.1.1'
+    androidTestImplementation 'info.cukes:cucumber-android:1.2.5@jar'
+    androidTestImplementation 'info.cukes:cucumber-picocontainer:1.2.4'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
 }

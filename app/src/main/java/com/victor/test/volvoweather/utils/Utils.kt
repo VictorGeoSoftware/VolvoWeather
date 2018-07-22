@@ -49,3 +49,7 @@ fun getFormattedDateTimeForAdapter(time:Long): String {
     val hour = hourFormat.format(date)
     return "$dayNameText $dayNameNumber - $hour"
 }
+
+fun checkIfValueIsWeather(value: String): Boolean {
+    return value.matches("\\d+?\\º".toRegex())
+}

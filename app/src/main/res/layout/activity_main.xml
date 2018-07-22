@@ -19,7 +19,7 @@
             style="@style/TextNormal" />
 
         <TextView
-            android:id="@+id/txtWeather"
+            android:id="@+id/txtWeatherMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

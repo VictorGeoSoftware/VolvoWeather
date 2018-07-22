@@ -14,6 +14,7 @@ import com.victor.test.volvoweather.ui.detail.DetailActivity
 import com.victor.test.volvoweather.utils.getFormattedDateTime
 import com.victor.test.volvoweather.utils.loadWithGlide
 import com.victor.test.volvoweather.utils.prepareWeatherValue
+import com.victor.test.volvoweather.utils.trace
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -35,6 +36,8 @@ class MainActivity : AppCompatActivity(), WeatherPresenter.WeatherView {
             val intent = Intent(this, DetailActivity::class.java)
             startActivity(intent)
         }
+
+        trace("victor - MainActivity - onCreate!")
     }
 
     override fun onDestroy() {
@@ -47,6 +50,7 @@ class MainActivity : AppCompatActivity(), WeatherPresenter.WeatherView {
     // ---------------------------------------------------------------------------------------------
     // ---------------------------------- WEATHER VIEW INTERFACE -----------------------------------
     override fun onWeatherForTodayReceived(weather: GetWeatherResp) {
+        trace("victor - MainActivity - onWeatherForTodayReceived!")
         showWeatherInUI(weather)
     }
 
@@ -60,7 +64,7 @@ class MainActivity : AppCompatActivity(), WeatherPresenter.WeatherView {
     // -------------------------------------------- METHODS ----------------------------------------
     private fun showWeatherInUI(weather: GetWeatherResp) {
         mDataBinding.txtCity.text = weather.name
-        mDataBinding.txtWeather.text = prepareWeatherValue(weather.main.temp)
+        mDataBinding.txtWeatherMain.text = prepareWeatherValue(weather.main.temp)
 
         val max = prepareWeatherValue(weather.main.temp_min)
         val min = prepareWeatherValue(weather.main.temp_max)

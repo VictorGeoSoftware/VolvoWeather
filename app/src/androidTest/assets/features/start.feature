@@ -40,3 +40,4 @@
     Examples:
       | see |
       | true |
+      | false |

@@ -32,7 +32,11 @@
     Load activity from desktop and wait for information
 
     @start-feature
-    Scenario : MainActivity
-    Given an Activity
-    When activity is loaded
-    Then I can see weather in screen
+    Scenario Outline: Start app and wait for requested weather forecast
+    Given I have my MainActivity
+    When I see my MainActivity
+    Then I should <see> current weather forecast
+
+    Examples:
+      | see |
+      | true |
